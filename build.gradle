@@ -2,6 +2,8 @@ plugins {
 	id 'org.springframework.boot' version '2.3.1.RELEASE'
 	id 'io.spring.dependency-management' version '1.0.9.RELEASE'
 	id 'java'
+	id 'org.unbroken-dome.test-sets' version '3.0.1' //IntegrationTests
+	id "com.adarshr.test-logger" version "2.1.0" //Beautiful test logs
 }
 
 group = 'org.happyhome'
@@ -12,13 +14,27 @@ repositories {
 	mavenCentral()
 }
 
+testSets {
+	integrationTest
+}
+
 dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter'
-	testImplementation('org.springframework.boot:spring-boot-starter-test') {
+
+	testImplementation 'org.junit.jupiter:junit-jupiter-api'
+	testImplementation("org.assertj:assertj-core")
+	testRuntime("org.junit.jupiter:junit-jupiter-engine")
+
+	integrationTestImplementation('org.springframework.boot:spring-boot-starter-test') {
 		exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
 	}
 }
 
-test {
+tasks.withType(Test) {
 	useJUnitPlatform()
 }
+
+//Ensure that the check task fails the build if there are failing integration tests.
+check.dependsOn integrationTest
+//Ensure that our unit tests are run before our integration tests
+integrationTest.mustRunAfter test

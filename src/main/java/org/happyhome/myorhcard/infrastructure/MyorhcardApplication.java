@@ -1,4 +1,4 @@
-package org.happyhome.myorhcard;
+package org.happyhome.myorhcard.infrastructure;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
