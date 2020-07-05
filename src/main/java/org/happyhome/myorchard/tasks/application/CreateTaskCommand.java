@@ -1,4 +1,4 @@
-package org.happyhome.myorchard.tasks.application.usecase;
+package org.happyhome.myorchard.tasks.application;
 
 import java.util.Date;
 

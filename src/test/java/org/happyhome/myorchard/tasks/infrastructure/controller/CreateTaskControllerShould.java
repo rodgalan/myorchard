@@ -1,7 +1,7 @@
 package org.happyhome.myorchard.tasks.infrastructure.controller;
 
-import org.happyhome.myorchard.tasks.application.usecase.CreateTask;
-import org.happyhome.myorchard.tasks.application.usecase.CreateTaskCommand;
+import org.happyhome.myorchard.tasks.application.CreateTask;
+import org.happyhome.myorchard.tasks.application.CreateTaskCommand;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.Mock;
