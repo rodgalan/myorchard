@@ -24,7 +24,7 @@ public class CreateTaskControllerShould {
   private CreateTask createTask;
 
   @Test
-  void create_a_task() throws ParseException {
+  void notify_success_when_a_task_is_created() throws ParseException {
     String taskName = "MyTaskName";
     String taskDescription = "My task description";
     Date taskSchedule = new SimpleDateFormat("yyyy-MM-dd").parse("2020-08-20");

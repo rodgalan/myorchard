@@ -13,13 +13,13 @@ import static org.springframework.boot.test.context.SpringBootTest.WebEnvironmen
 
 
 @SpringBootTest(classes = {MyOrchardApplication.class}, webEnvironment = RANDOM_PORT)
-public class CreateTaskFeature {
+public class CreateTaskFeatureShould {
 
   @Autowired
   private TestRestTemplate testRestTemplate;
 
   @Test
-  void should_create_a_task() throws Exception {
+  void create_a_task() throws Exception {
 
     String create_a_task_request ="{"
         + "name : \"myTaskName\","
