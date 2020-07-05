@@ -23,7 +23,7 @@ public class CreateTaskFeature {
 
     String create_a_task_request ="{"
         + "name : \"myTaskName\","
-        + "schedule:{date: \"2020-08-20\",time: \"14:00\"},"
+        + "date: \"2020-08-20\","
         + "description : \"this is my task description\"}";
 
     ResponseEntity<Void> result = this.testRestTemplate.postForEntity("/task", create_a_task_request, Void.class);

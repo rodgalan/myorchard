@@ -3,7 +3,7 @@ plugins {
 	id 'io.spring.dependency-management' version '1.0.9.RELEASE'
 	id 'java'
 	id 'org.unbroken-dome.test-sets' version '3.0.1' //IntegrationTests
-	id "com.adarshr.test-logger" version "2.1.0" //Beautiful test logs
+	id 'com.adarshr.test-logger' version '2.1.0' //Beautiful test logs
 }
 
 group = 'org.happyhome'
@@ -24,8 +24,10 @@ dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-actuator'
 
 	testImplementation 'org.junit.jupiter:junit-jupiter-api'
-	testImplementation 'org.assertj:assertj-core'
 	testRuntime 'org.junit.jupiter:junit-jupiter-engine'
+	testImplementation 'org.assertj:assertj-core'
+	testImplementation 'org.mockito:mockito-inline:3.3.3'
+	testImplementation 'org.mockito:mockito-junit-jupiter:3.3.3'
 
 	integrationTestImplementation('org.springframework.boot:spring-boot-starter-test') {
 		exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
