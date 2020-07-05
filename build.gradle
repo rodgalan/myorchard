@@ -21,17 +21,15 @@ testSets {
 dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter'
 	implementation 'org.springframework.boot:spring-boot-starter-web'
-	implementation("org.springframework.boot:spring-boot-starter-actuator")
+	implementation 'org.springframework.boot:spring-boot-starter-actuator'
 
 	testImplementation 'org.junit.jupiter:junit-jupiter-api'
-	testImplementation("org.assertj:assertj-core")
-	testRuntime("org.junit.jupiter:junit-jupiter-engine")
+	testImplementation 'org.assertj:assertj-core'
+	testRuntime 'org.junit.jupiter:junit-jupiter-engine'
 
 	integrationTestImplementation('org.springframework.boot:spring-boot-starter-test') {
 		exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
 	}
-	integrationTestImplementation('org.springframework:spring-web')
-
 }
 
 tasks.withType(Test) {
