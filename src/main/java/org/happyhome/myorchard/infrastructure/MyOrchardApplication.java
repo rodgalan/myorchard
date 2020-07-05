@@ -1,13 +1,13 @@
-package org.happyhome.myorhcard.infrastructure;
+package org.happyhome.myorchard.infrastructure;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class MyorhcardApplication {
+public class MyOrchardApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(MyorhcardApplication.class, args);
+		SpringApplication.run(MyOrchardApplication.class, args);
 	}
 
 }

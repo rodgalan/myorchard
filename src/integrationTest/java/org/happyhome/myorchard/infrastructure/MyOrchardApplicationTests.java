@@ -1,4 +1,4 @@
-package org.happyhome.myorhcard.infrastructure;
+package org.happyhome.myorchard.infrastructure;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,7 +11,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 import static org.springframework.boot.test.context.SpringBootTest.WebEnvironment.RANDOM_PORT;
 
 @SpringBootTest(webEnvironment = RANDOM_PORT)
-class MyorhcardApplicationTests {
+class MyOrchardApplicationTests {
 
 	@Autowired
 	private TestRestTemplate testRestTemplate;

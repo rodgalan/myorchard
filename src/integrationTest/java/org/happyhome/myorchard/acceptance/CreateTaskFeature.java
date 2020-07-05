@@ -1,6 +1,6 @@
-package org.happyhome.myorhcard.acceptance;
+package org.happyhome.myorchard.acceptance;
 
-import org.happyhome.myorhcard.infrastructure.MyorhcardApplication;
+import org.happyhome.myorchard.infrastructure.MyOrchardApplication;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -12,7 +12,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 import static org.springframework.boot.test.context.SpringBootTest.WebEnvironment.RANDOM_PORT;
 
 
-@SpringBootTest(classes = {MyorhcardApplication.class}, webEnvironment = RANDOM_PORT)
+@SpringBootTest(classes = {MyOrchardApplication.class}, webEnvironment = RANDOM_PORT)
 public class CreateTaskFeature {
 
   @Autowired
