@@ -1,4 +1,4 @@
-package org.happyhome.myorchard.infrastructure;
+package org.happyhome.myorchard.shared.infrastructure;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
