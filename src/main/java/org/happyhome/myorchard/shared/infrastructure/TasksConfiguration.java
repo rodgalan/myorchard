@@ -1,6 +1,8 @@
 package org.happyhome.myorchard.shared.infrastructure;
 
 import org.happyhome.myorchard.tasks.application.CreateTask;
+import org.happyhome.myorchard.tasks.domain.Task;
+import org.happyhome.myorchard.tasks.domain.TaskRepository;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
@@ -8,8 +10,18 @@ import org.springframework.context.annotation.Configuration;
 public class TasksConfiguration {
 
   @Bean
-  public CreateTask createTask(){
-    return new CreateTask();
+  public TaskRepository taskRepository(){
+    return new TaskRepository() {
+      @Override
+      public void save(Task task) {
+        throw new UnsupportedOperationException();
+      }
+    };
+  }
+
+  @Bean
+  public CreateTask createTask(TaskRepository taskRepository){
+    return new CreateTask(taskRepository);
   }
 
 }

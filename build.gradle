@@ -18,6 +18,10 @@ testSets {
 	integrationTest
 }
 
+testlogger {
+	showFullStackTraces false
+}
+
 dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter'
 	implementation 'org.springframework.boot:spring-boot-starter-web'

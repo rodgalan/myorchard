@@ -12,4 +12,16 @@ public class CreateTaskCommand {
     this.description = description;
     this.date = date;
   }
+
+  public String getName() {
+    return name;
+  }
+
+  public String getDescription() {
+    return description;
+  }
+
+  public Date getDate() {
+    return date;
+  }
 }
