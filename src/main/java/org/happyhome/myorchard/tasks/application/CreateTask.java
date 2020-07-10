@@ -1,9 +1,10 @@
 package org.happyhome.myorchard.tasks.application;
 
+import org.happyhome.myorchard.tasks.domain.Description;
+import org.happyhome.myorchard.tasks.domain.Name;
 import org.happyhome.myorchard.tasks.domain.Task;
+import org.happyhome.myorchard.tasks.domain.TaskCalendar;
 import org.happyhome.myorchard.tasks.domain.TaskRepository;
-
-import java.util.Calendar;
 
 public class CreateTask {
   private final TaskRepository taskRepository;
@@ -18,12 +19,9 @@ public class CreateTask {
   }
 
   private Task taskBy(CreateTaskCommand createTaskCommand) {
-    Calendar calendar = Calendar.getInstance();
-    calendar.setTimeInMillis(createTaskCommand.getDate().getTime());
-    return new Task(createTaskCommand.getName(),
-        createTaskCommand.getDescription(),
-        calendar);
+    return new Task(new Name(createTaskCommand.getName()),
+        new Description(createTaskCommand.getDescription()),
+        new TaskCalendar(createTaskCommand.getDate().getTime()));
   }
-
 
 }

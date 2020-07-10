@@ -1,5 +1,8 @@
 package org.happyhome.myorchard.tasks.application;
 
+import org.happyhome.myorchard.tasks.domain.TaskCalendar;
+import org.happyhome.myorchard.tasks.domain.Description;
+import org.happyhome.myorchard.tasks.domain.Name;
 import org.happyhome.myorchard.tasks.domain.Task;
 import org.happyhome.myorchard.tasks.domain.TaskRepository;
 import org.junit.jupiter.api.Test;
@@ -9,7 +12,6 @@ import org.mockito.Mockito;
 import org.mockito.junit.jupiter.MockitoExtension;
 
 import java.text.ParseException;
-import java.util.Calendar;
 import java.util.Date;
 
 import static org.mockito.ArgumentMatchers.refEq;
@@ -31,13 +33,8 @@ public class CreateTaskShould {
     CreateTask createTask = new CreateTask(taskRepository);
     createTask.execute(createTaskCommand);
 
-    Task expectedSavedTask = taskBy(date_timestamp, name, description);
+    Task expectedSavedTask = new Task(new Name(name), new Description(description), new TaskCalendar(date_timestamp));
     Mockito.verify(taskRepository, times(1)).save(refEq(expectedSavedTask));
   }
 
-  private Task taskBy(long date_timestamp, String name, String description) {
-    Calendar calendar = Calendar.getInstance();
-    calendar.setTimeInMillis(date_timestamp);
-    return new Task(name, description, calendar);
-  }
 }

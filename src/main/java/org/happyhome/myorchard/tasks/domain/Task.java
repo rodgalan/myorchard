@@ -1,13 +1,11 @@
 package org.happyhome.myorchard.tasks.domain;
 
-import java.util.Calendar;
-
 public class Task {
-  private final String name;
-  private final String description;
-  private final Calendar calendar;
+  private final Name name;
+  private final Description description;
+  private final TaskCalendar calendar;
 
-  public Task(String name, String description, Calendar calendar) {
+  public Task(Name name, Description description, TaskCalendar calendar) {
     this.name = name;
     this.description = description;
     this.calendar = calendar;
