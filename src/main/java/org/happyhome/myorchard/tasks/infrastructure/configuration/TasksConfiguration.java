@@ -1,4 +1,4 @@
-package org.happyhome.myorchard.shared.infrastructure;
+package org.happyhome.myorchard.tasks.infrastructure.configuration;
 
 import org.happyhome.myorchard.tasks.application.CreateTask;
 import org.happyhome.myorchard.tasks.domain.Task;

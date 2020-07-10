@@ -34,7 +34,7 @@ public class CreateTaskShould {
     createTask.execute(createTaskCommand);
 
     Task expectedSavedTask = new Task(new Name(name), new Description(description), new TaskCalendar(date_timestamp));
-    Mockito.verify(taskRepository, times(1)).save(refEq(expectedSavedTask));
+    Mockito.verify(taskRepository, times(1)).save(refEq(expectedSavedTask, "uuid"));
   }
 
 }
