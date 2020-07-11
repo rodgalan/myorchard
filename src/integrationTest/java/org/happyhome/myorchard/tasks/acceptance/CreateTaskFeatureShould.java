@@ -24,9 +24,9 @@ public class CreateTaskFeatureShould {
   @Test
   void create_a_task() throws Exception {
     String task ="{"
-        + "name : \"myTaskName\","
-        + "date: \"2020-08-20\","
-        + "description : \"this is my task description\"}";
+        + "\"name\" : \"myTaskName\","
+        + "\"date\": \"2020-08-20\","
+        + "\"description\" : \"this is my task description\"}";
 
     HttpEntity<String> create_a_task_request = createTaskRequestBy(task);
 
