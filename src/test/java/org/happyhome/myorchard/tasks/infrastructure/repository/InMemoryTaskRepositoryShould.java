@@ -7,19 +7,17 @@ import org.happyhome.myorchard.tasks.domain.Task;
 import org.happyhome.myorchard.tasks.domain.TaskCalendar;
 import org.junit.jupiter.api.Test;
 
-import java.util.HashMap;
-import java.util.UUID;
-
 public class InMemoryTaskRepositoryShould {
-  private final HashMap<UUID, Task> inMemoryDatabase = new HashMap<>();
+  private final InMemoryTasksDatabase inMemoryTasksDatabase = new InMemoryTasksDatabase();
+
 
   @Test
   void save_a_task() {
     Task task = new Task(new Name("name"), new Description("description"), new TaskCalendar(5446633));
 
-    InMemoryTaskRepository repository= new InMemoryTaskRepository(inMemoryDatabase);
+    InMemoryTaskRepository repository= new InMemoryTaskRepository(inMemoryTasksDatabase);
     repository.save(task);
 
-    Assertions.assertThat(task).isEqualTo(inMemoryDatabase.get(task.getUid()));
+    Assertions.assertThat(task).isEqualTo(inMemoryTasksDatabase.get(task.getUid()));
   }
 }

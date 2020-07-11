@@ -1,21 +1,23 @@
 package org.happyhome.myorchard.tasks.infrastructure.configuration;
 
 import org.happyhome.myorchard.tasks.application.CreateTask;
-import org.happyhome.myorchard.tasks.domain.Task;
 import org.happyhome.myorchard.tasks.domain.TaskRepository;
 import org.happyhome.myorchard.tasks.infrastructure.repository.InMemoryTaskRepository;
+import org.happyhome.myorchard.tasks.infrastructure.repository.InMemoryTasksDatabase;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-
-import java.util.HashMap;
-import java.util.UUID;
 
 @Configuration
 public class TasksConfiguration {
 
   @Bean
-  public TaskRepository taskRepository(){
-    return new InMemoryTaskRepository(new HashMap<UUID, Task>());
+  public InMemoryTasksDatabase tasksDatabase(){
+    return new InMemoryTasksDatabase();
+  }
+
+  @Bean
+  public TaskRepository taskRepository(InMemoryTasksDatabase inMemoryTasksDatabase){
+    return new InMemoryTaskRepository(inMemoryTasksDatabase);
   }
 
   @Bean
