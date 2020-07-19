@@ -35,6 +35,20 @@ public class CreateTaskFeatureShould {
     assertThat(result.getStatusCode()).isEqualTo(HttpStatus.CREATED);
   }
 
+  @Test
+  void schedule_a_task_on_calendar() {
+    String task ="{"
+        + "\"name\" : \"myTaskName\","
+        + "\"date\": \"2020-08-20\","
+        + "\"description\" : \"this is my task description\"}";
+
+    HttpEntity<String> create_a_task_request = createTaskRequestBy(task);
+
+    ResponseEntity<Void> result = this.testRestTemplate.postForEntity("/task", create_a_task_request, Void.class);
+
+    //TODO: assertThatTaskIsCreatedOnCalendar  --> GoogleCalendarAssertion
+  }
+
   private HttpEntity<String> createTaskRequestBy(String jsonTask) {
     HttpHeaders headers = new HttpHeaders();
     headers.setContentType(MediaType.APPLICATION_JSON);

@@ -1,5 +1,6 @@
 package org.happyhome.myorchard.tasks.infrastructure.configuration;
 
+import org.happyhome.myorchard.shared.domain.EventBus;
 import org.happyhome.myorchard.tasks.application.CreateTask;
 import org.happyhome.myorchard.tasks.domain.TaskRepository;
 import org.happyhome.myorchard.tasks.infrastructure.repository.InMemoryTaskRepository;
@@ -21,8 +22,8 @@ public class TasksConfiguration {
   }
 
   @Bean
-  public CreateTask createTask(TaskRepository taskRepository){
-    return new CreateTask(taskRepository);
+  public CreateTask createTask(TaskRepository taskRepository, EventBus eventBus){
+    return new CreateTask(taskRepository, eventBus);
   }
 
 }

@@ -9,6 +9,10 @@ public class Description {
     this.description = description;
   }
 
+  public String getDescription() {
+    return description;
+  }
+
   @Override
   public boolean equals(Object o) {
     if (this == o) return true;
