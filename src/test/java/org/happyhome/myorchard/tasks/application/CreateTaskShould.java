@@ -22,6 +22,7 @@ import static net.javacrumbs.jsonunit.fluent.JsonFluentAssert.assertThatJson;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.mockito.ArgumentMatchers.refEq;
 import static org.mockito.Mockito.times;
+import static org.mockito.Mockito.verify;
 
 @ExtendWith(MockitoExtension.class)
 public class CreateTaskShould {
@@ -49,7 +50,7 @@ public class CreateTaskShould {
     createTask.execute(createTaskCommand);
 
     Task expectedSavedTask = new Task(new Name(name), new Description(description), new TaskCalendar(date_timestamp));
-    Mockito.verify(taskRepository, times(1)).save(refEq(expectedSavedTask, "uuid", "domainEvents"));
+    verify(taskRepository, times(1)).save(refEq(expectedSavedTask, "uuid", "domainEvents"));
   }
 
   @Test
